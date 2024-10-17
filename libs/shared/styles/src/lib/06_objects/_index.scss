@@ -1,0 +1,20 @@
+/**
+ * OBJECTS
+ * Esta capa contiene todos los estilos que permiten modificar el layout de
+ * nuestra aplicación siguiendo el paradigma de OOCSS (Object Oriented CSS).
+ * Estosestilos son reutilizables entre las distintas páginas de nuestra
+ * aplicación y, generalmente, también son reutilizables entre distintas
+ * aplicaciones. En términos generales entenderemos a los OBJECTS como patrones
+ * de diseño reutilizables. Generalmente los objetos se utilizan para reutilizar
+ * las siguientes propiedades: display, position, float, margin, padding,
+ * aligment, direction, width, ratio, clearfix, ...
+ * CodePen de Daniel Fornells con ejemplos de objetos muy interesantes:
+ * https://codepen.io/danifornells/pens/popular/
+ */
+@use 'wrapper';
+@use 'body';
+
+@mixin styles {
+  @include wrapper.styles;
+  @include body.styles;
+}

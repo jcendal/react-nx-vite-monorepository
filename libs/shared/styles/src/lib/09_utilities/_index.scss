@@ -1,0 +1,16 @@
+/**
+ * UTILITIES (ANTERIORMENTE TRUMPS)
+ * Clases que realizan una única acción como puede ser mover un elemento a la
+ * izquierda o mover un elemento a la derecha. Estas clasessiguen el principio
+ * de responsabilidad única (SRP). Estas clases son inmutables, no se pueden
+ * sobreescribir. Por ello, las clases de utilidad hacen uso de la propiedad
+ * !important. A menudo estas clases se utilizan para sobreescribir otros
+ * estilos.
+ */
+@use 'clearfix' as clearfix;
+@use 'print' as print;
+
+@mixin styles() {
+  @include clearfix.styles;
+  @include print.styles;
+}

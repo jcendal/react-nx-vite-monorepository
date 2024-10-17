@@ -1,0 +1,27 @@
+@use '../01_settings' as settings;
+@use '../02_tools' as tools;
+
+@mixin styles() {
+  .o-material-body {
+    // 4-colum grid
+    @include tools.column-grid($columns: 4, $gutter: settings.$layout-space-s);
+
+    // 600px - 904px
+    @include tools.mq($from: small, $until: smallWide) {
+      // 8-colum grid
+      @include tools.column-grid(
+        $columns: 8,
+        $gutter: settings.$layout-space-m
+      );
+    }
+
+    // 905+
+    @include tools.mq($from: smallWide) {
+      // 12-colum grid
+      @include tools.column-grid(
+        $columns: 12,
+        $gutter: settings.$layout-space-l
+      );
+    }
+  }
+}

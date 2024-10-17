@@ -1,0 +1,9 @@
+{
+  "name": "third-party-tanstack-router",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/third-party/tanstack/router/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project third-party-tanstack-router --web",
+  "targets": {}
+}

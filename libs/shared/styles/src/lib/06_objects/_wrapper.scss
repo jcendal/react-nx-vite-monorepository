@@ -1,0 +1,72 @@
+@use '../01_settings' as settings;
+@use '../02_tools' as tools;
+
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+
+@mixin styles() {
+  // 👉 “At extra small breakpoints, margins have a baseline value of 16px.
+  // The body remains responsive to increases in size. Upon reaching the next
+  // larger breakpoint, small at 600px wide), the margin increases to 32px.
+  // When the width of the body reaches 840px, the margins become flexible
+  // and increase up to a maximum margin width of 200px. After the maximum
+  // width is reached, the body region once again becomes responsive, continuing
+  // to scale horizontally. At large breakpoints, the body region can maintain
+  // a maximum width while margins again scale horizontally.” - Material
+  // Design 2
+  .o-material-wrapper {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding-right: env(safe-area-inset-right, 0);
+    padding-left: env(safe-area-inset-left, 0);
+    grid-template-areas: 'margin-left body margin-right';
+    // grid-template-columns: 16px 1fr 16px; // Si siguieramos Material
+    grid-template-columns: 8px 1fr 8px;
+    grid-template-rows: 1fr;
+
+    // 600px - 904px
+    @include tools.mq($from: small, $until: smallWide) {
+      // body crece hasta 904px - 32px - 32px = 840px
+      grid-template-columns: 32px 1fr 32px;
+    }
+
+    // 905px - 1239px
+    @include tools.mq($from: smallWide, $until: medium) {
+      // márgenes crecen hasta (1239px - 840px) / 2 = 199.5px
+      grid-template-columns: minmax(32px, 1fr) 840px minmax(32px, 1fr);
+    }
+
+    // 1240px - 1439px
+    @include tools.mq($from: medium, $until: large) {
+      // body crece hasta 1439px - 200px - 200px = 1039px
+      grid-template-columns: 200px minmax(840px, 1fr) 200px;
+    }
+
+    // 1440+
+    @include tools.mq($from: large) {
+      // aquí podemos elegir un poco cuál es el tamaño máximo del body
+      grid-template-columns: minmax(200px, 1fr) 1040px minmax(200px, 1fr);
+    }
+
+    &__margin-left {
+      grid-area: margin-left;
+    }
+
+    &__body {
+      grid-area: body;
+    }
+
+    &__margin-right {
+      grid-area: margin-right;
+    }
+
+    @if (settings.config(debug) == true) {
+      &__margin-left,
+      &__margin-right {
+        background-color: rgba(#9ee8c4, 0.5);
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/**
+ * GENERIC
+ * Esta es la primera capa con estilos (las capas anteriores eran de variables,
+ * funciones y mixins). En la capa GENERIC se definen los estilos que afectan a
+ * toda nuestra aplicación, los estilos base. Las media queries se podrían
+ * almacenar en este directorio, pero se prefiere utilizar la propiedad media
+ * dentro de los estilos de la capa COMPONENTS.
+ */
+@use 'box-sizing';
+@use 'normalize';
+@use 'reset';
+@use 'shared';
+@use 'fonts';
+
+@mixin styles() {
+  @include normalize.styles;
+  @include reset.styles;
+  @include box-sizing.styles;
+  @include shared.styles;
+  @include fonts.styles;
+}

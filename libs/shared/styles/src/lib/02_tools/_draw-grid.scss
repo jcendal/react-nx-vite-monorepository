@@ -1,0 +1,79 @@
+@use 'sass:meta';
+
+@use '../01_settings' as settings;
+
+@mixin draw-square-grid(
+  $baseline: settings.$baseline,
+  $color: settings.$color-grid
+) {
+  @if (meta.type-of($baseline) == number) {
+    @if (unit($baseline) != 'px') {
+      @error '`#{$baseline}` needs to be a pixel value.';
+    }
+  } @else {
+    @error '`#{$baseline}` needs to be a number.';
+  }
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent calc(#{$baseline} - 1px),
+      $color calc(#{$baseline} - 1px),
+      $color #{$baseline}
+    ),
+    repeating-linear-gradient(
+      -90deg,
+      transparent,
+      transparent calc(#{$baseline} - 1px),
+      $color calc(#{$baseline} - 1px),
+      $color #{$baseline}
+    );
+  background-size: #{$baseline} #{$baseline};
+}
+
+@mixin draw-baseline-grid(
+  $baseline: settings.$baseline,
+  $color: settings.$color-grid
+) {
+  @if (meta.type-of($baseline) == number) {
+    @if (unit($baseline) != 'px') {
+      @error '`#{$baseline}` needs to be a pixel value.';
+    }
+  } @else {
+    @error '`#{$baseline}` needs to be a number.';
+  }
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent calc(#{$baseline} - 1px),
+    $color calc(#{$baseline} - 1px),
+    $color #{$baseline}
+  );
+  background-size: #{$baseline} #{$baseline};
+}
+
+@mixin draw-box-background(
+  $baseline: settings.$baseline,
+  $color: settings.$color-grid
+) {
+  @if (meta.type-of($baseline) == number) {
+    @if (unit($baseline) != 'px') {
+      @error '`#{$baseline}` needs to be a pixel value.';
+    }
+  } @else {
+    @error '`#{$baseline}` needs to be a number.';
+  }
+
+  section {
+    background-color: #00ffff55;
+  }
+
+  // TODO: This is a hack to get the background to show up in the browser.
+}

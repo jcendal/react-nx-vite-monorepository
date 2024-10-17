@@ -1,0 +1,23 @@
+@forward './01_settings';
+@forward './02_tools' as t-*;
+@use './03_generic' as generic;
+@use './04_elements' as elements;
+@forward './05_animations' as a-*;
+@use './06_objects' as objects;
+@use './07_components' as components;
+@forward './07_components' as c-* hide styles;
+@use './08_vendor' as vendor;
+@use './09_utilities' as utilities;
+@use './10_shame' as shame;
+
+// Estilos globales
+// El siguiente orden es intencionado, no cambiarlo.
+@mixin core() {
+  @include generic.styles;
+  @include elements.styles;
+  @include objects.styles;
+  @include components.styles;
+  @include vendor.styles;
+  @include utilities.styles;
+  @include shame.styles;
+}

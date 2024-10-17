@@ -1,0 +1,11 @@
+@use '../01_settings' as settings;
+
+// sass-mq es una librería de terceros que nos ofrece un mixin (mq)
+// que nos ayuda a definir breakpoints y a trabajar con media queries.
+// Leer más aquí: https://github.com/sass-mq/sass-mq
+@use 'sass-mq/mq' with (
+  $breakpoints: settings.$breakpoints,
+  $show-breakpoints: settings.$show-breakpoints
+);
+
+@forward 'sass-mq/mq';

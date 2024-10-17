@@ -1,0 +1,31 @@
+//   ========================================================================
+//   #                            HIDDEN-VISUALLY                           #
+//   ========================================================================
+
+// Existen escenarios en los que deseamos ocultar elementos visualmente pero
+// nos interesa que permanezcan en nuestro DOM. Un caso podría ser el típico
+// enlace de "Saltar al contenido" que se utiliza para ir directamente al
+// contenido de un post. Estaríamos ante un caso en el que en diferentes
+// posts encontraríamos un elemento <a></a> que, pese a tener distinto
+// href (enlaces distintos) aparece en diferentes páginas con el nombre
+// "Saltar al contenido". Históricamente a Google no le ha gustado que
+// tengas diferentes enlaces con el mismo nombre y solía penalizar bastante el
+// posicionamiento por ello. Para solucionar este tipo de problemas a veces se
+// utilizan técnicas consistentes en ocultar visualmente algunos elementos.
+// El siguiente mixin nos permite ocultar visualmente elementos de la manera
+// más adecuada. Leer más:
+/* stylelint-disable-next-line max-line-length */
+// https://olgacarreras.blogspot.com/2011/11/ocultar-contenido-sin-comprometer-la.html
+
+@mixin hidden-visually() {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  margin: -1px !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}

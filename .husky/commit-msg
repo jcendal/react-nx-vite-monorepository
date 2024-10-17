@@ -1,0 +1,4 @@
+#!/bin/sh
+
+## We run commitlint to make sure that the commit complies with the Conventional Commits specification.
+npx --no-install commitlint --edit $1

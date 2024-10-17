@@ -1,0 +1,39 @@
+@mixin styles() {
+  @font-face {
+    font-family: 'Material Symbols Rounded';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v212/syl7-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvLgyidOK7BDB_Qb9vUdV6_gjDK-P3JuF_Zs-obHph2-jOcZTKPqw.woff2)
+      format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Material Symbols Rounded';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v212/syl7-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvLgyidOK7BDB_Qb9vUdV6_gjDK-P3JuF_Zs-obHph2-jOcgjWPqw.woff2)
+      format('woff2');
+  }
+
+  .material-symbols {
+    &-rounded {
+      display: inline-block;
+      direction: ltr;
+      font-family: 'Material Symbols Rounded';
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+      font-weight: normal;
+      letter-spacing: normal;
+      /* line-height: 1; */
+      text-transform: none;
+      white-space: nowrap;
+      word-wrap: normal;
+    }
+  }
+}

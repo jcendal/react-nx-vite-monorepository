@@ -1,0 +1,68 @@
+@mixin styles() {
+  /* ==========================================================================
+   #                                  RESET                                 #
+   ========================================================================== */
+
+  /**
+ * Una hoja de reset simple que complementa a Normalize.css.
+ */
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  blockquote,
+  p,
+  pre,
+  dl,
+  dd,
+  ol,
+  ul,
+  figure,
+  hr,
+  fieldset,
+  legend {
+    padding: 0;
+    margin: 0;
+  }
+
+  /**
+ * Elimina los márgenes finales de las listas anidadas.
+ */
+
+  li > {
+    ol,
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  /**
+ * Elimina el espaciado por defecto de las tablas.
+ */
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /**
+ * 1. Reestablece el comportamiento de Chrome y Firefox que establece
+ *    `min-width: min-content;` a los fieldsets.
+ */
+
+  fieldset {
+    min-width: 0; /* [1] */
+    border: 0;
+  }
+
+  /**
+ * Elimina el resaltado cuando haces click en dispositivos móviles.
+ */
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}

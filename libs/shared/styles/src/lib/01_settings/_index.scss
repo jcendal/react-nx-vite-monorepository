@@ -1,0 +1,7 @@
+// SETTINGS
+// En la capa settings se almacenan variables y funciones de SASS.
+// En esta capa no deben de existir estilos.
+@forward 'spacing';
+@forward 'config';
+@forward 'colors' as color-*;
+@forward 'responsive';

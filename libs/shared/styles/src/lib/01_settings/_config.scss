@@ -1,0 +1,21 @@
+//   ========================================================================
+//   #CONFIG
+//   ========================================================================
+@use 'sass:map';
+
+// En este fichero se definen las configuraciones a nivel de proyecto, como
+// pueden ser los conmutadores de características. A continuación, se define
+// un mapa de configuraciones globales.
+
+// Puedes acceder a los datos de este mapa usando la función config(<key>).
+$config: (
+  env: dev,
+  healthcheck: false,
+  debug: false,
+) !default;
+
+// Ejemplo de uso:
+// @if (config(debug) == true) { ... }
+@function config($key) {
+  @return map.get($config, $key);
+}

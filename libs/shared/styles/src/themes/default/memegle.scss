@@ -1,0 +1,136 @@
+@use 'sass:map';
+
+$-typeface: (
+  brand: var(--brand-font-family, 'Montserrat, sans-serif'),
+  // 'Montserrat'
+  plain: var(--plain-font-family, 'Inter, sans-serif'),
+  // 'Inter'
+  weight-regular: 400,
+  weight-medium: 500,
+  weight-bold: 700,
+);
+
+// Info: https://m3.material.io/styles/typography/applying-type
+$typescale: (
+  display-large: (
+    font: map.get($-typeface, brand),
+    size: 57,
+    tracking: 0,
+    weight: map.get($-typeface, weight-regular),
+  ),
+  display-medium: (
+    font: map.get($-typeface, brand),
+    size: 45,
+    tracking: 0,
+    weight: map.get($-typeface, weight-regular),
+  ),
+  display-small: (
+    font: map.get($-typeface, brand),
+    size: 36,
+    tracking: 0,
+    weight: map.get($-typeface, weight-bold),
+  ),
+  headline-large: (
+    font: map.get($-typeface, brand),
+    size: 32,
+    tracking: 0,
+    weight: map.get($-typeface, weight-bold),
+  ),
+  headline-medium: (
+    font: map.get($-typeface, brand),
+    size: 28,
+    tracking: 0,
+    weight: map.get($-typeface, weight-regular),
+  ),
+  headline-small: (
+    font: map.get($-typeface, brand),
+    size: 24,
+    tracking: 0,
+    weight: map.get($-typeface, weight-bold),
+  ),
+  headline-extra-small: (
+    font: map.get($-typeface, brand),
+    size: 10,
+    tracking: 0,
+    weight: map.get($-typeface, weight-medium),
+  ),
+  title-large: (
+    font: map.get($-typeface, brand),
+    size: 22,
+    tracking: 0,
+    weight: map.get($-typeface, weight-bold),
+  ),
+  title-medium: (
+    font: map.get($-typeface, brand),
+    size: 16,
+    tracking: 0.15,
+    weight: map.get($-typeface, weight-bold),
+  ),
+  title-small: (
+    font: map.get($-typeface, brand),
+    size: 14,
+    tracking: 0.1,
+    weight: map.get($-typeface, weight-regular),
+  ),
+  label-large: (
+    font: map.get($-typeface, brand),
+    size: 14,
+    tracking: 0.1,
+    weight: map.get($-typeface, weight-medium),
+  ),
+  label-medium: (
+    font: map.get($-typeface, brand),
+    size: 12,
+    tracking: 0.5,
+    weight: map.get($-typeface, weight-medium),
+  ),
+  label-small: (
+    font: map.get($-typeface, brand),
+    size: 11,
+    tracking: 0.5,
+    weight: map.get($-typeface, weight-medium),
+  ),
+  body-huge: (
+    font: map.get($-typeface, plain),
+    size: 22,
+    tracking: 0.5,
+    weight: map.get($-typeface, weight-regular),
+  ),
+  body-large: (
+    font: map.get($-typeface, plain),
+    size: 16,
+    tracking: 0.5,
+    weight: map.get($-typeface, weight-regular),
+  ),
+  body-medium: (
+    font: map.get($-typeface, plain),
+    size: 14,
+    tracking: 0.25,
+    weight: map.get($-typeface, weight-regular),
+  ),
+  body-small: (
+    font: map.get($-typeface, plain),
+    size: 12,
+    tracking: 0.4,
+    weight: map.get($-typeface, weight-regular),
+  ),
+  body-extra-small: (
+    font: map.get($-typeface, plain),
+    size: 10,
+    tracking: 0.4,
+    weight: map.get($-typeface, weight-regular),
+  ),
+);
+
+@use '../../lib'
+  with(
+    $config: (
+      env: prod,
+      healthcheck: false,
+      debug: false,
+    ),
+    $baseline: 4px,
+    $growth-factor: 1
+  );
+
+@forward '../../lib';

@@ -1,0 +1,146 @@
+//   ========================================================================
+//   #                        SPACING SYSTEM TOKENS                         #
+//   ========================================================================
+
+// La línea base (baseline) es la línea indivisible sobre la que se apoyan
+// la mayoría de letras. La distancia entre las líneas base establece la base
+// de un baseline grid. Los baseline grids nos permiten ajustar el ritmo
+// vertical (vertical rhythm) y alinear horizontalmente elementos de columnas
+// adyacentes. Una vez establecido el baseline grid, se busca forzar el
+// alineamiento de todos los elementos asegurando que cada línea de texto,
+// cada borde, cada imagen o cada caja coincidan y se adhieran a nuestra
+// estructura vertical.
+
+// NOTA: Material Design utiliza un 4px baseline grid.
+// Distancia entre baselines de nuestro baseline grid.
+$baseline: 4px !default;
+
+$growth-factor: 1 !default;
+
+// Factores que vamos a multiplicar por la distancia entre líneas para obtener
+// distintos tamaños de espaciado entre elementos (spacing unit sizes).
+$space-factor-0: 0;
+$space-factor-1: calc($space-factor-0 + $growth-factor);
+$space-factor-2: calc($space-factor-1 + $growth-factor);
+$space-factor-3: calc($space-factor-2 + $growth-factor);
+$space-factor-4: calc($space-factor-3 + $growth-factor);
+$space-factor-5: calc($space-factor-4 + $growth-factor);
+$space-factor-6: calc($space-factor-5 + $growth-factor);
+$space-factor-7: calc($space-factor-6 + $growth-factor);
+$space-factor-8: calc($space-factor-7 + $growth-factor);
+$space-factor-9: calc($space-factor-8 + $growth-factor);
+$space-factor-10: calc($space-factor-9 + $growth-factor);
+$space-factor-11: calc($space-factor-10 + $growth-factor);
+$space-factor-12: calc($space-factor-11 + $growth-factor);
+$space-factor-13: calc($space-factor-12 + $growth-factor);
+$space-factor-14: calc($space-factor-13 + $growth-factor);
+$space-factor-15: calc($space-factor-14 + $growth-factor);
+$space-factor-16: calc($space-factor-15 + $growth-factor);
+$space-factor-17: calc($space-factor-16 + $growth-factor);
+$space-factor-18: calc($space-factor-17 + $growth-factor);
+$space-factor-19: calc($space-factor-18 + $growth-factor);
+$space-factor-20: calc($space-factor-19 + $growth-factor);
+
+// Se comprueba que los factores de escalado son números enteros sin unidad.
+@each $_space-factor
+  in $space-factor-0
+  $space-factor-1
+  $space-factor-2
+  $space-factor-3
+  $space-factor-4
+  $space-factor-5
+  $space-factor-6
+  $space-factor-7
+  $space-factor-8
+  $space-factor-9
+  $space-factor-10
+  $space-factor-11
+  $space-factor-12
+  $space-factor-13
+  $space-factor-14
+  $space-factor-15
+  $space-factor-16
+  $space-factor-17
+  $space-factor-18
+  $space-factor-19
+  $space-factor-20
+{
+  @if (type-of($_space-factor) == number) {
+    @if (unitless($_space-factor) == false) {
+      @error '`#{$_space-factor}` needs to be unitless.';
+    }
+
+    @if ($_space-factor != ceil($_space-factor)) {
+      @error '`#{$_space-factor}` needs to be an integer.';
+    }
+  } @else {
+    @error '`#{$_space-factor}` needs to be a number.';
+  }
+}
+
+// Los espacios entre elementos se calculan en base a la distancia entre líneas
+// global del proyecto ($baseline).
+$space-0: calc($baseline * $space-factor-0); // 0px
+$space-1: calc($baseline * $space-factor-1); // 4px
+$space-2: calc($baseline * $space-factor-2); // 8px
+$space-3: calc($baseline * $space-factor-3); // 12px
+$space-4: calc($baseline * $space-factor-4); // 16px (default)
+$space-5: calc($baseline * $space-factor-5); // 20px
+$space-6: calc($baseline * $space-factor-6); // 24px
+$space-7: calc($baseline * $space-factor-7); // 28px
+$space-8: calc($baseline * $space-factor-8); // 32px
+$space-9: calc($baseline * $space-factor-9); // 36px
+$space-10: calc($baseline * $space-factor-10); // 40px
+$space-11: calc($baseline * $space-factor-11); // 44px
+$space-12: calc($baseline * $space-factor-12); // 48px
+$space-13: calc($baseline * $space-factor-13); // 52px
+$space-14: calc($baseline * $space-factor-14); // 56px
+$space-15: calc($baseline * $space-factor-15); // 60px
+$space-16: calc($baseline * $space-factor-16); // 64px
+$space-17: calc($baseline * $space-factor-17); // 68px
+$space-18: calc($baseline * $space-factor-18); // 72px
+$space-19: calc($baseline * $space-factor-19); // 76px
+$space-20: calc($baseline * $space-factor-20); // 80px
+
+// Tokens para trabajar con un grid pequeño pensado para
+// para separar elementos pequeños dentro de componentes. De esta
+// escala sólo se deberían usar los tokens más pequeños.
+// Si $baseline es 4px los siguientes tokens permiten trabajar con
+// un 4px square baseline grid.
+$space-xxs: $space-1; // 4px
+$space-xs: $space-2; // 8px
+$space-s: $space-3; // 12px
+$space-m: $space-4; // 16px (default)
+$space: $space-m; // 16px (default)
+$space-l: $space-5; // 20px
+$space-xl: $space-6; // 24px
+$space-2xl: $space-7; // 28px
+$space-3xl: $space-8; // 32px
+$space-4xl: $space-9; // 36px
+$space-5xl: $space-10; // 40px
+$space-6xl: $space-11; // 44px
+$space-7xl: $space-12; // 48px
+$space-8xl: $space-13; // 52px
+$space-9xl: $space-14; // 56px
+$space-10xl: $space-15; // 60px
+$space-11xl: $space-16; // 64px
+$space-12xl: $space-17; // 68px
+$space-13xl: $space-18; // 72px
+$space-14xl: $space-19; // 76px
+$space-15xl: $space-20; // 80px
+
+// Tokens para trabajar con un grid grande pensado para
+// separar componentes a nivel de layout.
+// Si $baseline es 4px los siguientes tokens permiten trabajar con
+// un 8px square baseline grid.
+$layout-space-s: $space-2; // 8px
+$layout-space-m: $space-4; // 16px (default)
+$layout-space: $layout-space-m; // 16px (default)
+$layout-space-l: $space-6; // 24px
+$layout-space-xl: $space-8; // 32px
+$layout-space-2xl: $space-10; // 40px
+$layout-space-3xl: $space-12; // 48px
+$layout-space-4xl: $space-14; // 56px
+$layout-space-5xl: $space-16; // 64px
+$layout-space-6xl: $space-18; // 72px
+$layout-space-7xl: $space-20; // 80px

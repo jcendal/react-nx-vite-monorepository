@@ -1,0 +1,23 @@
+/**
+ * ANIMATIONS
+ * Recordemos que la pirámide invertida que plantea ITCSS va de estilos
+ * más genéricos a más específicos. Generalmente una misma animación se
+ * aplica a más de un componente. En ocasiones, aunque no es una práctica
+ * habitual, también se desean animar los objetos de layout. Por ello,
+ * la capa ANIMATIONS se ha situado antes que la capa OBJECTS. De esta forma,
+ * tanto los objetos como los componentes podrán heredar el comportamiento de
+ * las animaciones.
+ * Para aplicar animaciones es habitual añadir y quitar con JavaScript la
+ * clase .in.
+ *
+ *
+ * Es muy habitual utilizar animaciones de la librería animate.css, librería
+ * referente en el mundo de las animaciones. Si necesitamos utilizar una
+ * animación concreta de esta librería, lo mejor es que la copiemos y peguemos
+ * dentro de nuestra capa ANIMATIONS adaptándola a la nomenclatura que
+ * utilizamos. Podemos encontrar la librería en el siguiente repositorio:
+ * https://daneden.github.io/animate.css/.
+ */
+@mixin styles() {
+  // Here we import all the elements styles
+}

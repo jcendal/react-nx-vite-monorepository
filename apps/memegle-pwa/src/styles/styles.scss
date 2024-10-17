@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@memegle/styles' as memegle;
+
+@include memegle.core();
+
+body {
+  @if (memegle.config(debug) == false) {
+    @include memegle.t-draw-baseline-grid();
+    @include memegle.t-draw-square-grid();
+    @include memegle.t-draw-box-background();
+  }
+}

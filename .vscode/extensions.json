@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "ms-playwright.playwright",
+    "firsttris.vscode-jest-runner",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "mikestead.dotenv",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "yoavbls.pretty-ts-errors",
+    "wayou.vscode-todo-highlight"
+  ]
+}

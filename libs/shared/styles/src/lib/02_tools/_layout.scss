@@ -1,0 +1,8 @@
+@mixin column-grid($columns, $gutter) {
+  display: grid;
+  column-gap: $gutter;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc((100% - (($columns - 1) * $gutter)) / $columns), 1fr)
+  );
+}

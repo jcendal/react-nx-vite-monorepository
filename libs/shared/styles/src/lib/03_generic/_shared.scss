@@ -1,0 +1,53 @@
+@use '../01_settings' as settings;
+
+@mixin styles() {
+  /* ==========================================================================
+   #                                 SHARED                                 #
+   ========================================================================== */
+
+  /**
+ * Estilos genéricos compartidos por varios elementos HTML.
+ */
+
+  /**
+ * Siempre declarar los márgenes en la misma dirección:
+ * csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+
+  /**
+ * Sangría consistente para las listas.
+ */
+  address,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  blockquote,
+  p,
+  pre,
+  dl,
+  ol,
+  ul,
+  figure,
+  hr,
+  table,
+  fieldset {
+    margin-bottom: 0;
+  }
+
+  /**
+ * Sangría consistente para las listas.
+ */
+
+  dd,
+  ol,
+  ul {
+    margin-left: 0;
+  }
+
+  i {
+    font-style: normal;
+  }
+}

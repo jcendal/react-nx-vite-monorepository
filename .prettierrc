@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json.schemastore.org/prettierrc",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "bracketSpacing": true,
+  "trailingComma": "es5",
+  "proseWrap": "always",
+  "eslintIntegration": true,
+  "overrides": [
+    {
+      "files": ["*.js", "*.ts"],
+      "options": {
+        "printWidth": 80
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 80
+      }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "printWidth": 80
+      }
+    }
+  ]
+}

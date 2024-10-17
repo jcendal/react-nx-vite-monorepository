@@ -1,0 +1,31 @@
+//   ========================================================================
+//   #                               CLEARFIX                               #
+//   ========================================================================
+
+// Mixin para añadir micro clearfix en un selector. Leer:
+// http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
+// En el momento en que flotamos elementos su contenedor puede perder la altura.
+// El siguiente mixin nos permite recuperar la altura del contendor en esos
+// casos. En la actualidad gracias a CSS Flex y CSS Grid ya no es necesario
+// flotar elementos por lo que el problema del "clearfix" es cosa del pasado.
+// El uso de este mixin es exclusivo para aquellos románticos que sigan
+// flotando elementos. P.D.: si veis a alguien que flote un elemento no os
+// fiéis de él.
+// Ejemplo:
+// .container {
+//   background-color: blue;
+//   @include clearfix();
+//   .child {
+//     width: 100px;
+//     height: 100px;
+//     background-color: yellow;
+//     float: right;
+//   }
+// }
+@mixin clearfix() {
+  &:after {
+    display: block !important;
+    clear: both !important;
+    content: '' !important;
+  }
+}

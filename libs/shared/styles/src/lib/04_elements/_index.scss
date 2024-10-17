@@ -1,0 +1,17 @@
+/**
+ * ELEMENTS (ANTERIORMENTE LLAMADA BASE)
+ * En esta capa sólo deberíamos añadir estilos que afectan a elementos HTML a
+ * lo largo de toda nuestra aplicación.
+ *
+ * Page.................Establece el `font-size` y el `line-height` por defecto
+ *                      de todo el proyecto.
+ *                      Es uno de los niveles más abstractos.
+ * Headings.............Estilos mínimos (p.e. la información del `font-size`) de
+ *                      todos los encabezados (del 1 al 6).
+ * Images...............Estilos base para las imágenes.
+ * Tables...............Estilos base para las tablas.
+ * SVGs.................Estilos base para los SVGs.
+ */
+@mixin styles() {
+  // Here we import all the elements styles
+}

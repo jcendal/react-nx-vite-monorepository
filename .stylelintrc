@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-prettier-scss",
+    "stylelint-config-idiomatic-order"
+  ],
+  "ignoreFiles": [
+    "./node_modules/*.scss",
+    "./node_modules/*.css",
+    "./tmp/*.scss",
+    "./dist/*.css"
+  ],
+  "rules": {
+    "order/properties-alphabetical-order": null,
+    "no-empty-source": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "font-family-no-missing-generic-family-keyword": null
+  }
+}

@@ -1,0 +1,22 @@
+/* ==========================================================================
+   #BOX-SIZING
+   ========================================================================== */
+
+/**
+ * box-sizing más sensible que el que viene establecido por defecto:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+
+@mixin styles() {
+  html {
+    box-sizing: border-box;
+  }
+
+  * {
+    &,
+    &:before,
+    &:after {
+      box-sizing: inherit;
+    }
+  }
+}

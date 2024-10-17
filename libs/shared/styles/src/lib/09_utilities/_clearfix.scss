@@ -1,0 +1,8 @@
+@use '../02_tools' as tools;
+
+@mixin styles() {
+  // Attach our clearfix mixin to a utility class.
+  .u-clearfix {
+    @include tools.clearfix();
+  }
+}
